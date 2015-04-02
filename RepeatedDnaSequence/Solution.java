@@ -1,7 +1,7 @@
 import java.util.*;
 /**
  * A simple solution, but will exceed memory limit
- * Please refer the C solution for further optimization
+ * Please refer the other solution for further optimization
  */
 public class Solution {
   public List<String> findRepeatedDnaSequences(String s) {
@@ -22,4 +22,19 @@ public class Solution {
     }
     return res;
   }
+  public List<String> findRepeatedDnaSequences(String s) {
+    Set<String> res = new HashSet<String>();
+    Set<String> set = new HashSet<String>();
+    for(int i = 0; i <= s.length() - 10; i++){
+      String str = s.substring(i, i + 10);
+      if(set.contains(str)){
+        res.add(str);
+      }else{
+        set.add(str);
+      }
+    }
+    List<String> resList = new ArrayList<String>(res);
+    return resList;
+  }
+
 }
