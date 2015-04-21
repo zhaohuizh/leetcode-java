@@ -19,6 +19,25 @@ public class Solution {
     }
     return res;
   }
+
+  public int[] plusOneFast(int[] digits){
+    int len = digits.length;
+    if(len == 0) return digits;
+    for(int i = len - 1; i >= 0; i--){
+      if(digits[i] == 9){
+        digits[i] = 0;
+      }else{
+        digits[i]++;
+        break;
+      }
+    }
+    if(digits[0] == 0){
+      digits = Arrays.copyOf(digits, digits.length + 1);
+      digits[0] = 1;
+    }
+    return digits;
+  }
+
   public static void main(String[] args){
     Solution s = new Solution();
     int[] d = {9, 9};
