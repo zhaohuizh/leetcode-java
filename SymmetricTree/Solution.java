@@ -41,8 +41,9 @@ public class Solution {
         }
       }
       int i = list.size() - childNum;
+      int end = list.size();
       childNum = 0;
-      for(; i < list.size() - 1; i++){
+      for(; i < end; i++){
         if(list.get(i).left != null){
           list.add(list.get(i).left);
           childNum++;
