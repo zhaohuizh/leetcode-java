@@ -12,19 +12,9 @@ public class Solution {
       if(j >= 0){
         val += b.charAt(j--) - '0';
       }
-      if(val == 0){
-        sb.insert(0, 0);
-        carry = 0;
-      }else if(val == 1){
-        sb.insert(0, 1);
-        carry = 0;
-      }else if(val == 2){
-        sb.insert(0, 0);
-        carry = 1;
-      }else{
-        sb.insert(0, 1);
-        carry = 1;
-      }
+      carry = val / 2;
+      val = val % 2;
+      sb.insert(0, val);
     }
     if(carry == 1){
       sb.insert(0, 1);
