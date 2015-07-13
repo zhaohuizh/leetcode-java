@@ -1,20 +1,17 @@
 public class Solution {
   public String longestPalindrome(String s) {
     String res = "";
-    int len = 0;
     for(int i = 0; i < s.length() - 1; i++){
       String tmp;
       if(s.charAt(i) == s.charAt(i + 1)){
         tmp = getLongestPalindrome(s, i, i + 1);
-        if(tmp.length() > len){
+        if(tmp.length() > res.length()){
           res = tmp;
-          len = tmp.length();
         }
       }
       tmp = getLongestPalindrome(s, i, i);
-      if(tmp.length() > len){
+      if(tmp.length() > res.length()){
         res = tmp;
-        len = tmp.length();
       }
     }
     return res;
